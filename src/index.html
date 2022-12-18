@@ -9,9 +9,45 @@
   <body>
     <main class="main-container">
       <header class="header">
-        <img src="./assets/img/icon-menu.svg" alt="An icon menu" />
+        <img src="./assets/img/icon-menu.svg" alt="An menu icon" />
+        <img src="./assets/img/logo.svg" alt="The company logo" />
 
-        <nav></nav>
+        <nav class="navbar">
+          <ul class="navbar__items">
+            <li>
+              <a href="#" class="navbar__link">Collections</a
+              ><a href="#" class="navbar__link">Men</a
+              ><a href="#" class="navbar__link">Women</a
+              ><a href="#" class="navbar__link">About</a
+              ><a href="#" class="navbar__link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="modal-navbar__background">
+          <nav class="modal-navbar">
+            <img
+              class="modal-navbar__close-icon"
+              src="./assets/img/icon-close.svg"
+              alt="close"
+            />
+            <ul class="modal-navbar__items">
+              <li>
+                <a href="#" class="modal-navbar__link">Collections</a
+                ><a href="#" class="modal-navbar__link">Men</a
+                ><a href="#" class="modal-navbar__link">Women</a
+                ><a href="#" class="modal-navbar__link">About</a
+                ><a href="#" class="modal-navbar__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__cart-avatar">
+          <div class="header__cart">
+            <div class="header__cart--notification">3</div>
+            <img src="./assets/img/icon-cart.svg" alt="cart" />
+          </div>
+          <img src="./assets/img/image-avatar.png" alt="avatar" />
+        </div>
       </header>
     </main>
     <footer></footer>
