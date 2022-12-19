@@ -25,7 +25,6 @@ body {
 .header__navigation {
   width: 175px;
   height: 100%;
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -88,6 +87,7 @@ body {
 }
 
 .navbar {
+  display: none;
   border: 1px solid green;
   width: 400px;
 }
@@ -105,6 +105,11 @@ body {
 }
 .navbar__link:hover {
   border-bottom: 4px solid hsl(26deg, 100%, 55%);
+}
+@media (min-width: 1115px) {
+  .navbar {
+    display: block;
+  }
 }
 
 .modal-navbar {
@@ -138,6 +143,48 @@ body {
 }
 .modal-navbar__close-icon:hover {
   cursor: pointer;
+}
+
+.gallery__image-container {
+  border: 1px solid blue;
+  height: 300px;
+  width: 100%;
+  background-image: url(../src/assets/img/image-product-1.jpg);
+  background-size: cover;
+}
+.gallery__previus {
+  background-color: hsl(0deg, 0%, 100%);
+  width: 40px;
+  height: 40px;
+  padding: 12px;
+  border-radius: 50px;
+  position: absolute;
+  top: 190px;
+  left: 15px;
+}
+.gallery__previus:hover {
+  cursor: pointer;
+}
+.gallery__next {
+  background-color: hsl(0deg, 0%, 100%);
+  width: 40px;
+  height: 40px;
+  padding: 12px;
+  border-radius: 50px;
+  position: absolute;
+  top: 190px;
+  left: 320px;
+}
+.gallery__next:hover {
+  cursor: pointer;
+}
+.gallery__thumbnails {
+  display: none;
+}
+@media (min-width: 1115px) {
+  .gallery__thumbnails {
+    display: block;
+  }
 }
 
 .main-container {
