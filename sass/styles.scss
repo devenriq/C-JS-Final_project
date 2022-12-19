@@ -7,6 +7,7 @@
 .main-container{
   width: 375px;
   border: 1px solid black;
+  position: relative;
   margin: auto;
   @media (min-width:1115px){
       width: 1115px;
