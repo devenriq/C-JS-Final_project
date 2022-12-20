@@ -1,0 +1,67 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.modal-gallery{
+  width: 446px;
+  // border:1px solid red;
+
+
+  &__background{
+    display: none;
+    @include m.modal-background;
+    // border: 2px solid red;
+    // display: grid;
+    place-content: center;
+  }
+
+  &__close-container{
+    text-align: right;
+    height: 30px;
+  }
+
+  &__close{
+    width: 15px;
+    &:hover{
+      cursor: pointer;
+      content: url(../src/assets/img/icon-close-orange.svg);
+    }
+  }
+
+  &__image-container{
+    background-image: url('../src/assets/img/image-product-1.jpg');
+    height: 446px;
+    background-size: cover;
+    border-radius:16px;
+    margin-bottom: 32px;
+    position: relative;
+
+  }
+
+  &__thumbnails{
+      display: flex;
+      justify-content: space-between;
+      width: 450px;
+      margin: auto;
+  }
+
+  &__thumbnail{
+    width: 90px;
+    border-radius: 16px;
+
+    &:hover{
+      cursor: pointer;
+      border: 2px solid v.$Orange;
+    }
+  }
+
+  &__previus{
+    @include m.image-btn(190px,-15px,false)
+  }
+
+  &__next{
+    @include m.image-btn(190px,420px,false)
+  }
+}
+
+
+
