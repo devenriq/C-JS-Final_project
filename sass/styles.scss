@@ -18,3 +18,10 @@
   }
 }
 
+.content{
+  @media(min-width: 1115px){
+    display: flex;
+    padding:90px 50px;
+    gap: 124px;
+  }
+}
