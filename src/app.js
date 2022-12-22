@@ -48,6 +48,8 @@ cartIconBtn.addEventListener("click", () => {
   cartModal.classList.toggle("show");
 
   if (lastValue == 0) {
+    productContainer.innerHTML = "<p class='cart-empty'>Your cart is empty</p>";
+  } else {
     drawProductInModal();
   }
 });
@@ -66,8 +68,9 @@ function deleteProduct() {
 
 // Cambiar imágenes cuando se presionen los botones flecha
 const imageContainer = document.querySelector(".gallery__image-container");
-const previusGalleryBtn = document.querySelector(".gallery__previus");
+const previousGalleryBtn = document.querySelector(".gallery__previus");
 const nextGalleryBtn = document.querySelector(".gallery__next");
+let imgIndex = 1;
 
 const imagesUrls = [
   "./assets/img/image-product-1.jpg",
@@ -75,6 +78,65 @@ const imagesUrls = [
   "./assets/img/image-product-3.jpg",
   "./assets/img/image-product-4.jpg",
 ];
+
+nextGalleryBtn.addEventListener("click", () => {
+  changeNextImage(imageContainer);
+});
+
+previousGalleryBtn.addEventListener("click", () => {
+  changePreviousImage(imageContainer);
+});
+
+// Mostrar modal de imágenes cuando hago click en la imagen principal
+const imagesModal = document.querySelector(".modal-gallery__background");
+const closeModalBtn = document.querySelector(".modal-gallery__close");
+
+imageContainer.addEventListener("click", () => {
+  imagesModal.style.display = "grid";
+});
+
+closeModalBtn.addEventListener("click", () => {
+  imagesModal.style.display = "none";
+});
+
+//Cambiar imágenes principales desde thumbnails
+
+let thumbnails = document.querySelectorAll(".gallery__thumbnail");
+thumbnails = [...thumbnails];
+
+thumbnails.forEach((thumbnail) => {
+  thumbnail.addEventListener("click", (e) => {
+    imageContainer.style.backgroundImage = `url("./assets/img/image-product-${e.target.id}.jpg")`;
+  });
+});
+
+//Cambiar imágenes principales desde thumbnails en el modal
+
+let modalThumbnails = document.querySelectorAll(".modal-gallery__thumbnail");
+const modalImageContainer = document.querySelector(
+  ".modal-gallery__image-container"
+);
+modalThumbnails = [...modalThumbnails];
+modalThumbnails.forEach((thumbnail) => {
+  thumbnail.addEventListener("click", (e) => {
+    modalImageContainer.style.backgroundImage = `url("./assets/img/image-product-${e.target.id.slice(
+      -1
+    )}.jpg")`;
+  });
+});
+
+// Cambiar imagen principal de modal desde flechas de modal
+
+const nextModalBtn = document.querySelector(".modal-gallery__previus");
+const previousModalBtn = document.querySelector(".modal-gallery__next");
+
+nextModalBtn.addEventListener("click", () => {
+  changeNextImage(modalImageContainer);
+});
+
+previousModalBtn.addEventListener("click", () => {
+  changePreviousImage(modalImageContainer);
+});
 
 // Funciones
 
@@ -104,4 +166,22 @@ const drawProductInModal = () => {
   priceModal.innerHTML = `$125 x${lastValue} <span>$${
     lastValue * 125
   }.00</span>`;
+};
+
+const changeNextImage = (imgContainer) => {
+  if (imgIndex == 4) {
+    imgIndex = 1;
+  } else {
+    imgIndex++;
+  }
+  imgContainer.style.backgroundImage = `url("./assets/img/image-product-${imgIndex}.jpg")`;
+};
+
+const changePreviousImage = (imgContainer) => {
+  if (imgIndex == 1) {
+    imgIndex = 4;
+  } else {
+    imgIndex--;
+  }
+  imgContainer.style.backgroundImage = `url("./assets/img/image-product-${imgIndex}.jpg")`;
 };

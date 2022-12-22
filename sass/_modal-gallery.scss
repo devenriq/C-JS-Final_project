@@ -3,14 +3,11 @@
 
 .modal-gallery{
   width: 446px;
-  // border:1px solid red;
 
 
   &__background{
     display: none;
     @include m.modal-background;
-    // border: 2px solid red;
-    // display: grid;
     place-content: center;
   }
 
