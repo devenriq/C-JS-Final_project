@@ -68,6 +68,7 @@ body {
   font-size: 0.6em;
   text-align: center;
   color: hsl(0deg, 0%, 100%);
+  z-index: 100;
 }
 .header__cart:hover {
   cursor: pointer;
