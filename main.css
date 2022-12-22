@@ -334,7 +334,7 @@ body {
 }
 
 .cart-modal {
-  display: none;
+  border: 1px solid green;
   width: 360px;
   height: 260px;
   border-radius: 8px;
@@ -496,4 +496,4 @@ body {
   display: block;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=main.css.map */

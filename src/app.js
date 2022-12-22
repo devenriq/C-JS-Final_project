@@ -26,6 +26,18 @@ let cartNotification = document.querySelector(".header__cart--notification");
 console.log(addToCartBtn);
 
 addToCartBtn.addEventListener("click", () => {
-  const newCart = (cartNotification.innerText = userInputNumber);
+  let lastValue = parseInt(cartNotification.innerText);
+  lastValue = lastValue + userInputNumber;
+
+  cartNotification.innerText = lastValue;
   cartNotification.style.display = "block";
+});
+
+// mostrar el modal con el detalle del carrito
+
+const cartIconBtn = document.querySelector(".header__cart");
+const cartModal = document.querySelector(".cart-modal");
+
+cartIconBtn.addEventListener("click", () => {
+  cartModal.classList.toggle("show");
 });
